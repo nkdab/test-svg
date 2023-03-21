@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <nav class="buttons"><button @click="addBlock">Add block</button></nav>
     <v-container msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
@@ -24,7 +25,11 @@ export default Vue.extend({
 
     Block.insert({ data: initialData });
   },
-  methods: {},
+  methods: {
+    addBlock() {
+      Block.insert({ data: { x: 0, y: 0 } });
+    },
+  },
 });
 </script>
 
@@ -33,5 +38,19 @@ export default Vue.extend({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 </style>

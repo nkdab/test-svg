@@ -1,5 +1,5 @@
 <template>
-  <svg width="100vh" height="100vw" @mousemove="onDrag" @mouseup="endDrag">
+  <svg class="v-container" @mousemove="onDrag" @mouseup="endDrag">
     <v-block
       v-for="block in blocks"
       :key="block.id"
@@ -103,4 +103,9 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped></style>
+<style>
+.v-container {
+  min-height: calc(100vh - 50px);
+  min-width: 100vw;
+}
+</style>
