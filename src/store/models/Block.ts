@@ -28,7 +28,7 @@ export class Block extends Model {
   get right() {
     return {
       x: this.x + 150,
-      Y: this.y + 75,
+      y: this.y + 75,
     };
   }
 

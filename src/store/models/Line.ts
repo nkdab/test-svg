@@ -21,9 +21,12 @@ export class Line extends Model {
   }
 
   get targetPoint() {
+    console.log(this.targetNode);
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    return Block.find(this.targetId)[this.targetNode];
+    const coordinates = Block.find(this.targetId)[this.targetNode];
+    console.log(coordinates);
+    return coordinates;
   }
   id!: string;
   sourceId!: string;
